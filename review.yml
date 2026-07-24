@@ -1,0 +1,160 @@
+aid: pay-uk
+name: Pay.UK
+review:
+  question: Does Pay.UK expose a public, self-serve developer API with a downloadable OpenAPI specification?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+  tier: rails-scheme
+findings:
+  summary: |
+    Pay.UK Limited (Company Number 10872449, The White Chapel Building, 10
+    Whitechapel High Street, London E1 8QS) is the recognised operator and
+    standards body for the United Kingdom's interbank retail payment systems. It
+    is a domestic rail and scheme operator, NOT a typical PSP or self-serve API
+    platform. It operates Bacs (batch Direct Debit / Direct Credit), the Faster
+    Payment System (24/7 real-time account-to-account payments), and the Image
+    Clearing System (cheque imaging), plus the Current Account Switch Service.
+    On top of the rails it owns overlay services — Confirmation of Payee (CoP)
+    and Request to Pay — and, through its Standards Authority, defines UK
+    payments standards and drives the ISO 20022 migration underpinning the New
+    Payments Architecture (NPA).
+
+    This is a documentation / rulebook-first operator. No first-party public
+    developer portal, no self-serve signup, and no downloadable OpenAPI /
+    Swagger were found. Candidate developer hosts do not resolve
+    (developer.wearepay.uk, docs.wearepay.uk, api.wearepay.uk all DNS-fail;
+    www.wearepay.uk/developers and /api both 404). Confirmation of Payee is
+    explicitly an API-based peer-to-peer service (no central infrastructure; a
+    shared directory plus ISO 20022 messages), but Pay.UK publishes only the
+    scheme documentation openly — the machine-readable technical standard is
+    distributed through gated portals. Third parties (Santander, SurePay,
+    PayPoint, ClearBank, TechnoXander) implement the CoP API against Pay.UK's
+    standard; Pay.UK itself does not host an open self-serve endpoint or spec.
+
+    Technical standards are delivered through two consolidated, single-login
+    (registration-required) portals operated on standardssource.com: the Faster
+    Payment System ISO 20022 Standards Library (https://www.standardssource.com/fps)
+    and Standards Source for all other standards (https://www.standardssource.com/stn).
+    The Faster Payment System uses ISO 20022 messaging; Pay.UK also points to the
+    SWIFT MyStandards / Translator tooling for ISO 20022. An honest record here is
+    an identity + docs-pointer profile: no OpenAPI harvested, no public API host.
+  developerPortal:
+    firstPartyPortal: null
+    portalConfirmed: false
+    probed:
+    - url: https://www.wearepay.uk/
+      status: 200
+      note: Corporate site; recognised operator and standards body for UK interbank payments.
+    - url: https://www.wearepay.uk/developers
+      status: 404
+    - url: https://www.wearepay.uk/api
+      status: 404
+    - url: https://developer.wearepay.uk
+      status: 000
+      note: DNS does not resolve.
+    - url: https://docs.wearepay.uk
+      status: 000
+      note: DNS does not resolve.
+    - url: https://api.wearepay.uk
+      status: 000
+      note: DNS does not resolve.
+  openapi:
+    harvested: false
+    specsCount: 0
+    note: |
+      No downloadable OpenAPI/Swagger/JSON spec is published openly. ISO 20022
+      message specifications and the CoP technical standard are behind the gated
+      Standards Source / FPS Standards Library portals (registration required),
+      not fetchable anonymously.
+  authModel:
+    scheme: Participant onboarding / gated scheme access
+    note: |
+      No public self-serve API key or OAuth flow. Access to the rails and to
+      Confirmation of Payee is via scheme participation (direct or indirect),
+      compliance with scheme rules and technical standards, and registration for
+      the Standards Source portals. Confirmation of Payee is an API-based
+      peer-to-peer scheme in which each participant hosts and secures its own
+      endpoint per Pay.UK's technical standard; there is no central Pay.UK API host.
+    wellKnown:
+      openidConfiguration: not-applicable
+      oauthAuthorizationServer: not-applicable
+  webhooksEvents:
+    documented: false
+    note: |
+      No public webhook/event catalog or AsyncAPI is published. The rails are
+      message-based (ISO 20022 / legacy ISO 8583 for FPS), exchanged over scheme
+      infrastructure by participants rather than via public webhooks.
+  postman:
+    found: false
+  graphql:
+    found: false
+  githubOrganization:
+    found: false
+    note: |
+      No official Pay.UK GitHub organisation was confirmed. github.com/PayUK is
+      not a valid org (API returns null) and github.com/pay-uk is an unrelated
+      empty account (0 public repos, no metadata) — neither claimed.
+  iso20022:
+    posture: |
+      Core to the identity. Pay.UK is the UK scheme standards authority for ISO
+      20022. The Faster Payment System is migrating to ISO 20022 (from ISO 8583),
+      and Pay.UK publishes an FPS ISO 20022 Standards Library plus mapping
+      guidance; ISO 20022 also underpins the New Payments Architecture. Overlay
+      services (Confirmation of Payee, Request to Pay) are defined on ISO 20022
+      messaging. Addressing/assurance layer: Confirmation of Payee provides
+      account-name verification (the UK analogue to a Confirmation-of-Payee /
+      payee-name-check service).
+    railType: |
+      Mixed: Faster Payment System is real-time (24/7 instant A2A); Bacs is batch
+      (multi-day Direct Debit / Direct Credit); Image Clearing System is cheque
+      image clearing. Domestic UK only.
+  realArtifacts:
+    documentationPages:
+    - https://www.wearepay.uk/what-we-do/
+    - https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/
+    - https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/faster-payment-system-iso20022-standards-library/
+    - https://www.wearepay.uk/what-we-do/payment-systems/bacs-payment-system/
+    - https://www.wearepay.uk/what-we-do/payment-systems/image-clearing-system/
+    - https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/
+    - https://www.wearepay.uk/what-we-do/overlay-services/request-to-pay/
+    - https://www.wearepay.uk/what-we-do/standards-authority/
+    - https://www.wearepay.uk/what-we-do/standards-authority/iso-20022/
+    - https://www.wearepay.uk/what-we-do/standards-authority/accessing-standards/
+    gatedStandardsPortals:
+    - https://www.standardssource.com/fps
+    - https://www.standardssource.com/stn
+  transports:
+  - protocol: ISO 20022
+    note: Faster Payment System messaging standard (migrating from ISO 8583); NPA and overlay services defined on ISO 20022.
+    documented: true
+    access: gated
+  - protocol: REST
+    note: Confirmation of Payee is an API-based peer-to-peer service; participants implement REST endpoints per Pay.UK's technical standard. No central Pay.UK API host.
+    documented: true
+    access: gated
+  - protocol: OpenAPI
+    documented: false
+    note: No downloadable OpenAPI/Swagger published openly by Pay.UK.
+sources:
+- url: https://www.wearepay.uk/
+  type: Website
+  status: 200
+  note: Meta description confirms "recognised operator and standards body for the UK's interbank payment systems. Bacs - Faster - Image Payment System".
+- url: https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/
+  type: Documentation
+  status: 200
+  note: Confirmation of Payee described as an API-based peer-to-peer service with no central infrastructure.
+- url: https://www.wearepay.uk/what-we-do/standards-authority/accessing-standards/
+  type: Documentation
+  status: 200
+  note: Two consolidated single-login portals — Standards Source (stn) and FPS Standards Library (fps) on standardssource.com; also references SWIFT MyStandards for ISO 20022.
+- url: https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/faster-payment-system-iso20022-standards-library/
+  type: Documentation
+  status: 200
+  note: FPS ISO 20022 Standards Library — ISO 8583 to ISO 20022 mapping guidance, static PDF and interactive HTML; content is behind the gated portal.
+- url: https://newseventsinsights.wearepay.uk/
+  type: Blog
+  status: 200
+  note: Pay.UK news, events and insights subdomain.
