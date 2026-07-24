@@ -1,0 +1,42 @@
+generated: '2026-07-24'
+method: searched
+source: https://www.wearepay.uk/what-we-do/standards-authority/iso-20022/
+note: >-
+  Pay.UK is the UK scheme standards authority. Conformance here reflects the
+  messaging and payment standards Pay.UK itself defines and operates against,
+  established from its public standards documentation. There is no public
+  OpenAPI, so REST/HTTP cross-cutting standards (RFC 9457, JSON:API, pagination,
+  idempotency) cannot be asserted from a spec and are recorded as unknown rather
+  than claimed.
+standards:
+- id: iso20022
+  conforms: true
+  evidence: >-
+    Pay.UK is the UK scheme standards authority for ISO 20022. The Faster
+    Payment System is migrating to ISO 20022 and Pay.UK publishes an FPS ISO
+    20022 Standards Library plus ISO 8583-to-ISO 20022 mapping guidance; ISO
+    20022 also underpins the New Payments Architecture, and the Confirmation of
+    Payee and Request to Pay overlay services are defined on ISO 20022 messaging.
+  docs: https://www.wearepay.uk/what-we-do/standards-authority/iso-20022/
+- id: iso8583
+  conforms: true
+  evidence: >-
+    Legacy Faster Payment System messaging standard, being migrated away from to
+    ISO 20022. Documented in the FPS ISO 20022 Standards Library mapping guidance.
+  docs: https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/faster-payment-system-iso20022-standards-library/
+- id: confirmation-of-payee
+  conforms: true
+  evidence: >-
+    Pay.UK owns and operates the UK Confirmation of Payee scheme — an
+    industry-wide, API-based peer-to-peer account name-checking standard that
+    participants and approved vendors implement against Pay.UK's technical
+    standard (distributed via the gated Standards Source portal).
+  docs: https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/
+- id: rfc9457-problem-details
+  conforms: unknown
+  evidence: No public OpenAPI or error reference published to verify.
+- id: oauth2
+  conforms: unknown
+  evidence: >-
+    No public self-serve API; access is via scheme participation and gated
+    portal registration, not a documented OAuth flow.

@@ -1,0 +1,36 @@
+# Pay.UK
+
+> Pay.UK Limited is the recognised operator and standards body for the United Kingdom's interbank retail payment systems. It runs the domestic rails that move most of the money in the UK economy — Bacs (batch Direct Debit and Direct Credit), the Faster Payment System (24/7 real-time account-to-account payments), and the Image Clearing System for cheques — alongside the Current Account Switch Service, the Confirmation of Payee and Request to Pay overlay services, and the UK payments standards and ISO 20022 migration underpinning the New Payments Architecture. Pay.UK is a scheme and standards operator, not a self-serve API platform: it publishes rulebooks, participation requirements, and ISO 20022 message specifications rather than an open public API. Technical standards are distributed through gated, registration-required portals (Standards Source and the Faster Payment System ISO 20022 Standards Library). Confirmation of Payee is a documented, API-based peer-to-peer scheme that participants and approved vendors implement against Pay.UK's technical standard — there is no central Pay.UK API host and no downloadable OpenAPI.
+
+## What we do
+- [What we do](https://www.wearepay.uk/what-we-do/): Overview of Pay.UK's payment systems, overlay services and standards work.
+- [Faster Payment System](https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/): 24/7 real-time account-to-account payments; migrating to ISO 20022.
+- [Bacs Payment System](https://www.wearepay.uk/what-we-do/payment-systems/bacs-payment-system/): Batch Direct Debit and Direct Credit.
+- [Image Clearing System](https://www.wearepay.uk/what-we-do/payment-systems/image-clearing-system/): Cheque image clearing.
+
+## Overlay services
+- [Confirmation of Payee (CoP)](https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/): Industry-wide, API-based peer-to-peer account name-checking overlay to reduce misdirected payments and APP fraud.
+- [Confirmation of Payee FAQs](https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/faqs/): Scheme questions for participants and vendors.
+- [Request to Pay](https://www.wearepay.uk/what-we-do/overlay-services/request-to-pay/): Messaging-based flexible bill-payment overlay defined on ISO 20022.
+
+## Standards
+- [Standards Authority](https://www.wearepay.uk/what-we-do/standards-authority/): Pay.UK defines UK payments standards.
+- [ISO 20022](https://www.wearepay.uk/what-we-do/standards-authority/iso-20022/): The messaging standard underpinning FPS migration and the New Payments Architecture.
+- [Accessing standards](https://www.wearepay.uk/what-we-do/standards-authority/accessing-standards/): How to reach the gated Standards Source and FPS Standards Library portals.
+- [FPS ISO 20022 Standards Library](https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/faster-payment-system-iso20022-standards-library/): ISO 8583 to ISO 20022 mapping guidance (content behind the gated portal).
+
+## Access and onboarding
+- [Getting started with access](https://www.wearepay.uk/what-we-do/payment-systems/access-to-payment-systems/getting-started/): Scheme participation onboarding.
+- [Standards Source portal](https://www.standardssource.com/stn): Gated, single-login portal for Pay.UK standards (registration required).
+- [FPS Standards Library portal](https://www.standardssource.com/fps): Gated, single-login FPS ISO 20022 Standards Library (registration required).
+
+## More
+- [News, events and insights](https://newseventsinsights.wearepay.uk/): Pay.UK blog and updates.
+- [Contact](https://www.wearepay.uk/contact-us/): Get in touch with Pay.UK.
+- [Legal / terms](https://www.wearepay.uk/legal/): Terms of use.
+- [Privacy](https://www.wearepay.uk/privacy/): Privacy policy.
+
+## Notes for agents
+- There is no public, self-serve developer portal, no OpenAPI/Swagger, no GraphQL, no MCP server, and no public webhook/AsyncAPI catalog published by Pay.UK.
+- Access to the rails and to Confirmation of Payee is by scheme participation (direct or indirect) plus registration for the gated Standards Source portals.
+- Confirmation of Payee is API-based but peer-to-peer: each participant hosts and secures its own endpoint per Pay.UK's ISO 20022 technical standard; there is no central Pay.UK API host to call.
