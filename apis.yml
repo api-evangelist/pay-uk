@@ -22,72 +22,49 @@ description: >-
   Pay.UK's technical standards. Home market is the United Kingdom.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
-- Payments
-- United Kingdom
-- Real-Time Payments
-- ISO 20022
-- Account-to-Account
-- Faster Payments
-- Direct Debit
-- Payment Scheme
-- Standards Body
-- Confirmation of Payee
-created: '2026-07-24'
-modified: '2026-07-24T15:00:00Z'
-specificationVersion: '0.19'
-apis:
-- aid: pay-uk:confirmation-of-payee
-  name: Confirmation of Payee (CoP)
-  description: >-
-    Confirmation of Payee is Pay.UK's industry-wide account name-checking
-    overlay service, used to verify a payee's name against their account before
-    a payment is initiated in order to reduce misdirected payments and
-    Authorised Push Payment (APP) fraud. It is an API-based peer-to-peer service
-    with no central infrastructure — participants exchange requests directly
-    using a shared directory and Pay.UK's ISO 20022 technical standards. The
-    scheme is documented publicly, but the technical standard is distributed
-    through the gated Standards Source portal; there is no open public OpenAPI
-    or self-serve endpoint published by Pay.UK.
-  humanURL: https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/
-  tags:
-  - Confirmation of Payee
-  - Account Verification
-  - Fraud Prevention
+  - Payments
+  - United Kingdom
+  - Real-Time Payments
   - ISO 20022
-  properties:
-  - type: Documentation
-    url: https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/
-  - type: Documentation
-    url: https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/faqs/
-  - type: Support
-    url: https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/contact-us/
+  - Account-to-Account
+  - Faster Payments
+  - Direct Debit
+  - Payment Scheme
+  - Standards Body
+  - Confirmation of Payee
+created: '2026-07-24'
+modified: '2026-07-25'
+specificationVersion: '0.19'
+apis: []
 common:
-- type: DomainSecurity
-  url: security/pay-uk-domain-security.yml
-- type: Website
-  url: https://www.wearepay.uk/
-- type: Documentation
-  url: https://www.wearepay.uk/what-we-do/
-- type: Standards
-  url: https://www.wearepay.uk/what-we-do/standards-authority/
-- type: StandardsLibrary
-  url: https://www.standardssource.com/fps
-- type: StandardsSource
-  url: https://www.standardssource.com/stn
-- type: GettingStarted
-  url: https://www.wearepay.uk/what-we-do/payment-systems/access-to-payment-systems/getting-started/
-- type: Blog
-  url: https://newseventsinsights.wearepay.uk/
-- type: Support
-  url: https://www.wearepay.uk/contact-us/
-- type: TermsOfService
-  url: https://www.wearepay.uk/legal/
-- type: PrivacyPolicy
-  url: https://www.wearepay.uk/privacy/
-- type: Conformance
-  url: conformance/pay-uk-conformance.yml
-- type: LLMsTxt
-  url: llms/pay-uk-llms.txt
+  - type: DomainSecurity
+    url: security/pay-uk-domain-security.yml
+  - type: Website
+    url: https://www.wearepay.uk/
+  - type: Documentation
+    url: https://www.wearepay.uk/what-we-do/
+  - type: Standards
+    url: https://www.wearepay.uk/what-we-do/standards-authority/
+  - type: StandardsLibrary
+    url: https://www.standardssource.com/fps
+  - type: StandardsSource
+    url: https://www.standardssource.com/stn
+  - type: GettingStarted
+    url: https://www.wearepay.uk/what-we-do/payment-systems/access-to-payment-systems/getting-started/
+  - type: Blog
+    url: https://newseventsinsights.wearepay.uk/
+  - type: Support
+    url: https://www.wearepay.uk/contact-us/
+  - type: TermsOfService
+    url: https://www.wearepay.uk/legal/
+  - type: PrivacyPolicy
+    url: https://www.wearepay.uk/privacy/
+  - type: Conformance
+    url: conformance/pay-uk-conformance.yml
+  - type: LLMsTxt
+    url: llms/pay-uk-llms.txt
+  - type: Contact
+    url: https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
+  - FN: Kin Lane
+    email: kin@apievangelist.com

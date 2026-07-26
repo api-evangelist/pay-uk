@@ -30,11 +30,6 @@ United Kingdom
 
 ## APIs
 
-### Confirmation of Payee (CoP)
-
-Pay.UK's industry-wide account name-checking overlay service, used to verify a payee's name against their account before a payment is initiated in order to reduce misdirected payments and Authorised Push Payment (APP) fraud. It is an API-based peer-to-peer service with no central infrastructure — participants exchange requests directly using a shared directory and Pay.UK's ISO 20022 technical standards. The scheme is documented publicly, but the technical standard is distributed through the gated Standards Source portal; there is no open public OpenAPI or self-serve endpoint published by Pay.UK.
-
-- **Human URL:** [https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/](https://www.wearepay.uk/what-we-do/overlay-services/confirmation-of-payee/)
 
 #### Tags
 
