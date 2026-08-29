@@ -20,6 +20,17 @@ description: >-
   registration required). Confirmation of Payee is a documented, API-based
   peer-to-peer scheme that participants and approved vendors implement against
   Pay.UK's technical standards. Home market is the United Kingdom.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Payments
