@@ -56,10 +56,12 @@ tags:
   - Standards Body
   - Confirmation of Payee
 created: '2026-07-24'
-modified: '2026-07-25'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis: []
 common:
+  - url: https://www.wearepay.uk/feed/
+    type: BlogRSS
   - type: DomainSecurity
     url: security/pay-uk-domain-security.yml
   - type: Website
